@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Footwear Classification</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background: linear-gradient(to right, #f0f0f0, #ffffff, #f0f0f0);
+            padding: 20px;
+        }
+
+        .container-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        #answerPart, #jsonDisplayPart {
+            margin-top: 20px;
+        }
+
+        #preview {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            max-width: 100%;
+        }
+    </style>
+    <script src="script.js" async></script>
+</head>
+
+<body>
+    <div class="container-content">
+        <h1 class="display-4 text-center">Footwear Classification</h1>
+        <p class="lead text-center">Project 2 by Flavio Gottardo</p>
+
+        <form class="mb-4">
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Bitte Bild hochladen (jpeg, png)</label>
+                <input type="file" accept="image/png, image/jpeg" class="form-control-file" id="image" name="image"
+                    onchange="checkFiles(this.files);">
+            </div>
+        </form>
+
+        <div id="answerPart" style="visibility: hidden;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Analyzed Image:</h5>
+                    <p><img id="preview" src="#" alt="preview" /></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="jsonDisplayPart" style="visibility: hidden;">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="card-title">Image Analysis Result</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Class Name</th>
+                                <th>Probability</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jsonDisplay">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
