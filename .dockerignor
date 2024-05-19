@@ -1,0 +1,5 @@
+/target
+/models/**
+!shoeclassifier-0002.params
+!synset.txt
+/ut-zap50k-images-square

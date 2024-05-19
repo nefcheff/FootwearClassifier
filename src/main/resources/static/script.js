@@ -28,7 +28,11 @@ function checkFiles(files) {
     const formData = new FormData();
     formData.append("image", file);
 
-    fetch('/analyze', {
+    const modelSelect = document.getElementById("modelSelect");
+    const selectedModel = modelSelect.value;
+    const endpoint = selectedModel === "inference" ? "/analyze-model" : "/analyze";
+
+    fetch(endpoint, {
         method: 'POST',
         headers: {
         },
